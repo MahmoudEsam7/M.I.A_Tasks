@@ -1,25 +1,13 @@
-# **M.i.A Tasks**
-## Table of Tasks:
-+ 1-C-Programming
-    + Hello Gru
-    + Counting Down
-    + Task Manager
-    + Kalman Missile
-+ 2-HardWare
-    + Lightning the Dark
-    + Air Extractor to Fan
-    + Box of Shame
-+ 3-Embedded System
-    + Signal to Engage
-    + Cookiebot 
-+ 4-Pythin OOP & Machine Learning
-    + Sky Clash
-    + Shrrinkage Model
-+ 5-Linux Commands      
-
-
-     
-
-
-
-
+# **Task5**
+## Task Description :
+it just a pdf to show how i use command lines to start with ROS. 
+## The commands I used in this task :
+    mkdir -> to create a direcotry.
+    cd -> to change the current directory.
+    catkin_make -> to create directories and run Cmake commands.
+    ls -> to list directory contents of files.
+    catkin_create_pkg -> to create a package.
+    source devel/setup.bash -> sourcing the setup.bash files.
+    chmod a+x -> to change files mode to executable.
+    roscore -> to run ROS master.
+    rosrun pkg_name node_name -> to run the node. 
