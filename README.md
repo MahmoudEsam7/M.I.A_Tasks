@@ -36,7 +36,9 @@
     + Signal to Engage
 
           Task3.1 Description:
-              Two Arduino codes, one that interface with two push buttons, and the other one communicates with the first one by receiving data about buttons state, using I2C                communication protocol. In the receiving side we need to interface with indicator LED andwrite a message on the Serial Monitor
+              Two Arduino codes, one that interface with two push buttons,
+              and the other one communicates with the first one by receiving data about buttons state, using I2C communication protocol.
+              In the receiving side we need to interface with indicator LED andwrite a message on the Serial Monitor
     + Cookiebot
 
           Task3.2 Description:
@@ -45,24 +47,27 @@
     + Sky Clash
 
           Task4.1 Description:
-              python programm which simulates a battle between two villains, each villain has the same attributes (health->100 ,energy->500) and each of them has a unique set               of weapons and shields,using the OOP features.
+              python programm which simulates a battle between two villains, each villain has the same attributes (health->100 ,energy->500)
+              and each of them has a unique set of weapons and shields,using the OOP features.
     + Shrrinkage Model
 
           Task4.2 Description:
               Create a linear regression model from skratch,using a given dataset to train this model, and plot the dataset and the model line in the same chart.
 + 5-Linux Commands      
   
-      Task Description :
-         it just a pdf to show how i use command lines to start with ROS. 
-         The commands I used in this task :
-               mkdir -> to create a direcotry.
-               cd -> to change the current directory.
-               catkin_make -> to create directories and run Cmake commands.
-               ls -> to list directory contents of files.
-               catkin_create_pkg -> to create a package.
-               source devel/setup.bash -> sourcing the setup.bash files.
-               chmod a+x -> to change files mode to executable.
-               roscore -> to run ROS master.
+    + Task Description :
+
+          it just a pdf to show how i use command lines to start with ROS. 
+    + The commands I used in this task :
+
+               cd                        -> to change the current directory.
+               ls                        -> to list directory contents of files.
+               mkdir                     -> to create a direcotry.
+               roscore                   -> to run ROS master.
+               chmod a+x                 -> to change files mode to executable.
+               catkin_make               -> to create directories and run Cmake commands.
+               catkin_create_pkg         -> to create a package.
+               source devel/setup.bash   -> sourcing the setup.bash files.
                rosrun pkg_name node_name -> to run the node. 
 
 
