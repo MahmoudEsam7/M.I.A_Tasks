@@ -1,5 +1,5 @@
 # **M.i.A Tasks**
-## Table of Contents:
+## Table of Tasks:
 + 1-C-Programming
     + Hello Gru
     + Counting Down
@@ -15,6 +15,7 @@
 + 4-Pythin OOP & Machine Learning
     + Sky Clash
     + Shrrinkage Model
++ 5-Linux Commands      
 
 
      
