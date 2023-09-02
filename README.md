@@ -1,4 +1,4 @@
-# Some Command Lines I used To Start With Ros
+# Some Command Lines I Used To Start With ROS
   + To create a directory:
 
          mkdir -p ~/Catkin_works/src 
