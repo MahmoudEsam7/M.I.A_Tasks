@@ -1,74 +1,37 @@
-# **M.i.A Tasks**
-## Table of Tasks:
-+ 1-C-Programming
-    + Hello Gru
+# **Precise Self-Localization**
+## Code :
++ MPU6050 using I2c protocal to communicate, so we first Start communication with MPU6050 // MPU=0x68 :
+  	
+  	Wire.begin();
+        Wire.beginTransmission(MPU);      
+        Wire.write(0x6B); 
+        Wire.write(0x00);                 
+        Wire.endTransmission(true); 
++ Then i Configure Gyro Sensitivity :
 
-          Task1.1 Description:
-               C-program that prints the string ‘GRU’ in the output terminal
-    + Counting Down
+	Wire.beginTransmission(MPU);
+  	Wire.write(0x1B);
+  	Wire.write(0x08);
+        Wire.endTransmission(true);
+        delay(20);
++ I Read Gyro data :
 
-          Task1.2 Description:
-               C-program that takes the number to start the countdown from as input and prints the countdown text    
-    + Task Manager
-
-          Task1.3  Description:
-               C-program that allows users to add, view, and remove tasks, each task has an id/index and a description.
-    + Kalman Missile
-
-          Task1.4  Description:
-               C-program that takes two sensor measurements and generates only one new array measurement with any averaging method.
-+ 2-HardWare
-    + Lightning the Dark
-
-          Task2.1 Description:
-               Designing a circuit that takes 220V AC as input and the output is 5V DC
-               mainly it is a step-down transformar(to step-down the volt from 220V AC to 7.4V AC) and rectifier stage (it's output is pulsating dc) 
-               and a filter (to kill ripples) and a zener Diode (to keep the output voltage 5V DC)
-    + Air Extractor to Fan
-
-          Task2.2 Description :
-              Designing a sample H-Bridge to control the direction of DC motor
-    + Box of Shame
- 
-          Task2.3 Description:
-              a sample circuit which show how many parallel batteries should be connected to power the given LED for more than 5 Hours
-+ 3-Embedded System
-    + Signal to Engage
-
-          Task3.1 Description:
-              Two Arduino codes, one that interface with two push buttons,
-              and the other one communicates with the first one by receiving data about buttons state, using I2C communication protocol.
-              In the receiving side we need to interface with indicator LED andwrite a message on the Serial Monitor
-    + Cookiebot
-
-          Task3.2 Description:
-              Taking data from 4 Ultrasonic sensors and try to localize the robot within well-known room ang try to get the position of an object in the same room 
-+ 4-Pythin OOP & Machine Learning
-    + Sky Clash
-
-          Task4.1 Description:
-              python programm which simulates a battle between two villains, each villain has the same attributes (health->100 ,energy->500)
-              and each of them has a unique set of weapons and shields,using the OOP features.
-    + Shrrinkage Model
-
-          Task4.2 Description:
-              Create a linear regression model from skratch,using a given dataset to train this model, and plot the dataset and the model line in the same chart.
-+ 5-Linux Commands      
-  
-    + Task Description :
-
-          it just a pdf to show how i use command lines to start with ROS. 
-    + The commands I used in this task :
-
-               cd                        -> to change the current directory.
-               ls                        -> to list directory contents of files.
-               mkdir                     -> to create a direcotry.
-               roscore                   -> to run ROS master.
-               chmod a+x                 -> to change files mode to executable.
-               catkin_make               -> to create directories and run Cmake commands.
-               catkin_create_pkg         -> to create a package.
-               source devel/setup.bash   -> sourcing the setup.bash files.
-               rosrun pkg_name node_name -> to run the node. 
+	 previousTime = currentTime; 
+        currentTime = millis();            // Current time actual time read
+        dTime = (currentTime - previousTime) / 1000; 
+        Wire.beginTransmission(MPU);
+        Wire.write(0x47); 
+        Wire.endTransmission(false);
+        Wire.requestFrom(MPU, 2);
+        while(Wire.available() <2); 
+        GyroZ = (Wire.read() << 8 | Wire.read()) / 65.5; // For a 500deg/s range we have to divide first the raw value by 65.5
++ To Calculate Yaw We Need to Integrate The Raw Data From Gyro :
+  	
+  	yaw =  yaw + GyroZ * dTime;
+         
++ We Need to Calculate the offset of MPU6050:
+	
+       we should place the IMU flat in order to get the proper values, so that we then can the correct values, Read gyro values 2000 times and       getthe average
 
 
      
