@@ -45,7 +45,7 @@ void loop() {
 /***************************************Function Definition Start********************************************/
 void doencoder_A(void){
 
-  if (digitalRead(Encoder_A) != digitalRead(Encoder_B))
+  if (out_A[1] != out_B[1])
   {
     count++;
   }else
@@ -55,7 +55,7 @@ void doencoder_A(void){
 }
 
 void doencoder_B(void){
-  if (digitalRead(Encoder_A) == digitalRead(Encoder_B))
+  if (out_A[1] == out_B[1])
   {
     count++;
   }else
